@@ -1,0 +1,49 @@
+{
+  "plugins": [
+    "@nxtensions/astro"
+  ],
+  "npmScope": "pdfit",
+  "namedInputs": {
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
+    "production": [
+      "default"
+    ],
+    "sharedGlobals": []
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ]
+    },
+    "check": {
+      "inputs": [
+        "production",
+        "^production"
+      ]
+    }
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e",
+          "check"
+        ],
+        "accessToken": "NjJiYWI1YjktY2VkNS00NGI5LWIyNTEtODAzMDBmOGVjMjY2fHJlYWQtd3JpdGU="
+      }
+    }
+  },
+  "defaultProject": "pdfit"
+}
